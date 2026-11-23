@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* Coloca o elem no tamanho exato, sem considera border e padding */
+    /* box-sizing: border-box; */ 
+    /* font-family: sans-serif; */
+}
+
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#003473, #f09855);
+    transition: 0.3s;
+}
+
+.titulos{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+ 
+.titulos ul li{
+    list-style: none;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.titulos li a{
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none; /*retira o traço do link*/
+    color: #fff;
+}
+
+.box_imagem{ 
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+.box_imagem img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* object-fit: none ; 
+    none = img mantém o tam original  
+    fill = img esticada para o tam do container
+    contain = img redimens mantendo a proporcão
+    cover = img red p/ não deixar espaço vazio no container
+    scale-down = img menores permanecem no mmo tamanho(none) e maiores
+    diminuidas para caber(contain)*/
+    object-fit: cover;
+}
+
+
+.titulos ul li::before  {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -1;
+    opacity: 0;
+    transition: .5s;
+}
+
+
+.box_imagem ul li:nth-child(1)::before {
+    background: linear-gradient(#003473, #f09855);
+}
+
+
+.box_imagem ul li:nth-child(2)::before {
+    background: linear-gradient(black, gray);
+}
+
+.box_imagem ul li:nth-child(3)::before {
+    background: linear-gradient(#74a7b1, #273848);
+}
+
+.box_imagem ul li:nth-child(4)::before {
+    background: linear-gradient(#25efff, #0b0100);
+}
+
+.box_imagem ul li:nth-child(5)::before {
+    background: linear-gradient(#95fdf1,black);
+}
+
+.box_imagem ul li:nth-child(6)::before {
+    background: linear-gradient(#969595, #364761);
+}
+
+
+.box_imagem ul li:hover::before {
+    opacity: 1;
+}
+
+
+ 
